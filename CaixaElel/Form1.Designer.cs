@@ -30,111 +30,120 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSaldo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.numValor = new System.Windows.Forms.NumericUpDown();
+            this.numLimite = new System.Windows.Forms.NumericUpDown();
+            this.btnSacar = new System.Windows.Forms.Button();
+            this.btnDepositar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numValor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLimite)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(143, 106);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 31);
+            this.label1.Size = new System.Drawing.Size(85, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Valor";
+            this.label1.Text = "Valor:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(134, 354);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 235);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 31);
+            this.label2.Size = new System.Drawing.Size(94, 31);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Limite";
+            this.label2.Text = "Limite:";
             // 
-            // label3
+            // lblSaldo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(346, 282);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 31);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "R$ 0,00 ";
+            this.lblSaldo.AutoSize = true;
+            this.lblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldo.ForeColor = System.Drawing.Color.White;
+            this.lblSaldo.Location = new System.Drawing.Point(109, 161);
+            this.lblSaldo.Name = "lblSaldo";
+            this.lblSaldo.Size = new System.Drawing.Size(116, 31);
+            this.lblSaldo.TabIndex = 2;
+            this.lblSaldo.Text = "R$ 0,00 ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(134, 282);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 31);
             this.label4.TabIndex = 3;
             this.label4.Text = "Saldo:";
             // 
-            // numericUpDown1
+            // numValor
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(316, 99);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(191, 38);
-            this.numericUpDown1.TabIndex = 4;
+            this.numValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
+            this.numValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numValor.ForeColor = System.Drawing.Color.White;
+            this.numValor.Location = new System.Drawing.Point(124, 27);
+            this.numValor.Name = "numValor";
+            this.numValor.Size = new System.Drawing.Size(191, 38);
+            this.numValor.TabIndex = 4;
             // 
-            // numericUpDown2
+            // numLimite
             // 
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(316, 347);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(191, 38);
-            this.numericUpDown2.TabIndex = 5;
+            this.numLimite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
+            this.numLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numLimite.ForeColor = System.Drawing.Color.White;
+            this.numLimite.Location = new System.Drawing.Point(124, 233);
+            this.numLimite.Name = "numLimite";
+            this.numLimite.Size = new System.Drawing.Size(191, 38);
+            this.numLimite.TabIndex = 5;
             // 
-            // button1
+            // btnSacar
             // 
-            this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(316, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 41);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Sacar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSacar.AutoSize = true;
+            this.btnSacar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSacar.Location = new System.Drawing.Point(166, 81);
+            this.btnSacar.Name = "btnSacar";
+            this.btnSacar.Size = new System.Drawing.Size(156, 41);
+            this.btnSacar.TabIndex = 6;
+            this.btnSacar.Text = "Sacar";
+            this.btnSacar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDepositar
             // 
-            this.button2.AutoSize = true;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(140, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 41);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Depositar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDepositar.AutoSize = true;
+            this.btnDepositar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepositar.Location = new System.Drawing.Point(12, 81);
+            this.btnDepositar.Name = "btnDepositar";
+            this.btnDepositar.Size = new System.Drawing.Size(141, 41);
+            this.btnDepositar.TabIndex = 7;
+            this.btnDepositar.Text = "Depositar";
+            this.btnDepositar.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
+            this.ClientSize = new System.Drawing.Size(334, 302);
+            this.Controls.Add(this.btnDepositar);
+            this.Controls.Add(this.btnSacar);
+            this.Controls.Add(this.numLimite);
+            this.Controls.Add(this.numValor);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.Text = "Caixa Eletrônico";
+            ((System.ComponentModel.ISupportInitialize)(this.numValor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLimite)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,12 +153,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NumericUpDown numValor;
+        private System.Windows.Forms.NumericUpDown numLimite;
+        private System.Windows.Forms.Button btnSacar;
+        private System.Windows.Forms.Button btnDepositar;
     }
 }
 
