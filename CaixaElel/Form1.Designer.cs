@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
@@ -69,9 +70,9 @@
             this.lblSaldo.ForeColor = System.Drawing.Color.White;
             this.lblSaldo.Location = new System.Drawing.Point(109, 161);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(116, 31);
+            this.lblSaldo.Size = new System.Drawing.Size(74, 31);
             this.lblSaldo.TabIndex = 2;
-            this.lblSaldo.Text = "R$ 0,00 ";
+            this.lblSaldo.Text = "0,00 ";
             // 
             // label4
             // 
@@ -87,19 +88,32 @@
             // numValor
             // 
             this.numValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
+            this.numValor.DecimalPlaces = 2;
             this.numValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numValor.ForeColor = System.Drawing.Color.White;
             this.numValor.Location = new System.Drawing.Point(124, 27);
+            this.numValor.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numValor.Name = "numValor";
             this.numValor.Size = new System.Drawing.Size(191, 38);
             this.numValor.TabIndex = 4;
+            this.numValor.ValueChanged += new System.EventHandler(this.numValor_ValueChanged);
             // 
             // numLimite
             // 
             this.numLimite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
+            this.numLimite.DecimalPlaces = 2;
             this.numLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numLimite.ForeColor = System.Drawing.Color.White;
             this.numLimite.Location = new System.Drawing.Point(124, 233);
+            this.numLimite.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numLimite.Name = "numLimite";
             this.numLimite.Size = new System.Drawing.Size(191, 38);
             this.numLimite.TabIndex = 5;
@@ -107,29 +121,35 @@
             // btnSacar
             // 
             this.btnSacar.AutoSize = true;
-            this.btnSacar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSacar.Enabled = false;
+            this.btnSacar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSacar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSacar.Location = new System.Drawing.Point(166, 81);
             this.btnSacar.Name = "btnSacar";
             this.btnSacar.Size = new System.Drawing.Size(156, 41);
             this.btnSacar.TabIndex = 6;
             this.btnSacar.Text = "Sacar";
             this.btnSacar.UseVisualStyleBackColor = true;
+            this.btnSacar.Click += new System.EventHandler(this.btnSacar_Click);
             // 
             // btnDepositar
             // 
             this.btnDepositar.AutoSize = true;
-            this.btnDepositar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnDepositar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDepositar.Location = new System.Drawing.Point(12, 81);
             this.btnDepositar.Name = "btnDepositar";
-            this.btnDepositar.Size = new System.Drawing.Size(141, 41);
+            this.btnDepositar.Size = new System.Drawing.Size(145, 41);
             this.btnDepositar.TabIndex = 7;
             this.btnDepositar.Text = "Depositar";
             this.btnDepositar.UseVisualStyleBackColor = true;
+            this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(334, 302);
             this.Controls.Add(this.btnDepositar);
@@ -140,7 +160,12 @@
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.Opacity = 0.99D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa Eletrônico";
             ((System.ComponentModel.ISupportInitialize)(this.numValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLimite)).EndInit();
