@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,6 +38,8 @@
             this.numLimite = new System.Windows.Forms.NumericUpDown();
             this.btnSacar = new System.Windows.Forms.Button();
             this.btnDepositar = new System.Windows.Forms.Button();
+            this.tmrJuros = new System.Windows.Forms.Timer(this.components);
+            this.lblTaxa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLimite)).BeginInit();
             this.SuspendLayout();
@@ -145,13 +148,30 @@
             this.btnDepositar.UseVisualStyleBackColor = true;
             this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
             // 
+            // tmrJuros
+            // 
+            this.tmrJuros.Enabled = true;
+            this.tmrJuros.Interval = 5000;
+            this.tmrJuros.Tick += new System.EventHandler(this.tmrJuros_Tick);
+            // 
+            // lblTaxa
+            // 
+            this.lblTaxa.AutoSize = true;
+            this.lblTaxa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxa.ForeColor = System.Drawing.Color.White;
+            this.lblTaxa.Location = new System.Drawing.Point(12, 321);
+            this.lblTaxa.Name = "lblTaxa";
+            this.lblTaxa.Size = new System.Drawing.Size(0, 31);
+            this.lblTaxa.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(334, 302);
+            this.ClientSize = new System.Drawing.Size(334, 411);
+            this.Controls.Add(this.lblTaxa);
             this.Controls.Add(this.btnDepositar);
             this.Controls.Add(this.btnSacar);
             this.Controls.Add(this.numLimite);
@@ -167,6 +187,9 @@
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa Eletrônico";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLimite)).EndInit();
             this.ResumeLayout(false);
@@ -184,6 +207,8 @@
         private System.Windows.Forms.NumericUpDown numLimite;
         private System.Windows.Forms.Button btnSacar;
         private System.Windows.Forms.Button btnDepositar;
+        private System.Windows.Forms.Timer tmrJuros;
+        private System.Windows.Forms.Label lblTaxa;
     }
 }
 
