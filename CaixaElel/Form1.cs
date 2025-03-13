@@ -45,5 +45,34 @@ namespace CaixaElel
         {
             VerificarLimite();
         }
+
+        double taxa = 0.05;
+
+        private void tmrJuros_Tick(object sender, EventArgs e)
+        {
+            saldo += saldo*taxa; 
+            lblSaldo.Text = saldo.ToString("c");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblTaxa.Text =
+                $"* Taxa: {taxa * 100}% a.c {tmrJuros.Interval/1000f}s";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Desseja mesmo sair do banco?","Banco",MessageBoxButtons.YesNo);
+            if(r == DialogResult.No)
+            {
+                e.Cancel = true;
+                lblTaxa.Text = e.ToString();
+            }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MessageBox.Show("Tchau, pobre!");
+        }
     }
 }
