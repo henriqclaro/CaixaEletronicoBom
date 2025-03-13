@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,20 +37,12 @@
             this.numLimite = new System.Windows.Forms.NumericUpDown();
             this.btnSacar = new System.Windows.Forms.Button();
             this.btnDepositar = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.invest = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLimite)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Valor:";
             // 
             // label2
             // 
@@ -145,13 +137,42 @@
             this.btnDepositar.UseVisualStyleBackColor = true;
             this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
             // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            // 
+            // invest
+            // 
+            this.invest.AutoSize = true;
+            this.invest.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.invest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invest.Location = new System.Drawing.Point(328, 81);
+            this.invest.Name = "invest";
+            this.invest.Size = new System.Drawing.Size(103, 41);
+            this.invest.TabIndex = 8;
+            this.invest.Text = "Investir";
+            this.invest.UseVisualStyleBackColor = true;
+            this.invest.Click += new System.EventHandler(this.invest_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Valor:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(334, 302);
+            this.ClientSize = new System.Drawing.Size(434, 302);
+            this.Controls.Add(this.invest);
             this.Controls.Add(this.btnDepositar);
             this.Controls.Add(this.btnSacar);
             this.Controls.Add(this.numLimite);
@@ -175,8 +196,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Label label4;
@@ -184,6 +203,9 @@
         private System.Windows.Forms.NumericUpDown numLimite;
         private System.Windows.Forms.Button btnSacar;
         private System.Windows.Forms.Button btnDepositar;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button invest;
+        private System.Windows.Forms.Label label1;
     }
 }
 

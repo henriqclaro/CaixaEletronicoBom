@@ -12,11 +12,15 @@ namespace CaixaElel
 {
     public partial class Form1 : Form
     {
-        double saldo = 0;
-
+        public double saldo = 0;
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public void ReeberSaldo(double saldo)
+        {
+            this.saldo = saldo;
         }
 
         void AtualizarSaldo()
@@ -44,6 +48,13 @@ namespace CaixaElel
         private void numValor_ValueChanged(object sender, EventArgs e)
         {
             VerificarLimite();
+        }
+
+        private void invest_Click(object sender, EventArgs e)
+        {
+            Form2 inves = new Form2(this);
+            inves.Show();
+            this.Hide();
         }
     }
 }
