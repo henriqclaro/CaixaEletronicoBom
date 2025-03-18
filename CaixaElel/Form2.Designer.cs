@@ -43,13 +43,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.total = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.rendimento = new System.Windows.Forms.Label();
             this.variavel_texto = new System.Windows.Forms.Label();
             this.fixa_texto = new System.Windows.Forms.Label();
             this.prefixado_texto = new System.Windows.Forms.Label();
-            this.tick = new System.Windows.Forms.Timer(this.components);
+            this.prefix = new System.Windows.Forms.Timer(this.components);
+            this.variable = new System.Windows.Forms.Timer(this.components);
+            this.mudamudamuda = new System.Windows.Forms.Timer(this.components);
+            this.resgata = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numResgate = new System.Windows.Forms.NumericUpDown();
+            this.saldo_text = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.addinvest = new System.Windows.Forms.Timer(this.components);
+            this.invest_tudo = new System.Windows.Forms.Button();
+            this.resgatarTudo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numValor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numResgate)).BeginInit();
             this.SuspendLayout();
             // 
             // numValor
@@ -58,7 +67,7 @@
             this.numValor.DecimalPlaces = 2;
             this.numValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numValor.ForeColor = System.Drawing.Color.White;
-            this.numValor.Location = new System.Drawing.Point(383, 462);
+            this.numValor.Location = new System.Drawing.Point(383, 584);
             this.numValor.Margin = new System.Windows.Forms.Padding(4);
             this.numValor.Maximum = new decimal(new int[] {
             10000,
@@ -74,7 +83,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(19, 462);
+            this.label1.Location = new System.Drawing.Point(19, 584);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(334, 39);
@@ -87,10 +96,10 @@
             this.invest.Enabled = false;
             this.invest.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.invest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invest.Location = new System.Drawing.Point(602, 457);
+            this.invest.Location = new System.Drawing.Point(602, 579);
             this.invest.Margin = new System.Windows.Forms.Padding(4);
             this.invest.Name = "invest";
-            this.invest.Size = new System.Drawing.Size(137, 50);
+            this.invest.Size = new System.Drawing.Size(149, 50);
             this.invest.TabIndex = 9;
             this.invest.Text = "Investir";
             this.invest.UseVisualStyleBackColor = true;
@@ -147,7 +156,6 @@
             this.investimentos.Name = "investimentos";
             this.investimentos.Size = new System.Drawing.Size(398, 159);
             this.investimentos.TabIndex = 13;
-            this.investimentos.SelectedIndexChanged += new System.EventHandler(this.investimentos_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -202,7 +210,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(20, 391);
+            this.label8.Location = new System.Drawing.Point(20, 420);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(333, 39);
@@ -213,36 +221,12 @@
             // 
             this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.total.ForeColor = System.Drawing.Color.White;
-            this.total.Location = new System.Drawing.Point(376, 391);
+            this.total.Location = new System.Drawing.Point(376, 420);
             this.total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.total.Name = "total";
-            this.total.Size = new System.Drawing.Size(363, 39);
+            this.total.Size = new System.Drawing.Size(678, 39);
             this.total.TabIndex = 19;
             this.total.Text = "xx.x";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(134, 338);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(219, 39);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Rendimento: ";
-            // 
-            // rendimento
-            // 
-            this.rendimento.AutoSize = true;
-            this.rendimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rendimento.ForeColor = System.Drawing.Color.White;
-            this.rendimento.Location = new System.Drawing.Point(376, 338);
-            this.rendimento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.rendimento.Name = "rendimento";
-            this.rendimento.Size = new System.Drawing.Size(108, 39);
-            this.rendimento.TabIndex = 21;
-            this.rendimento.Text = "+-xx.x";
             // 
             // variavel_texto
             // 
@@ -280,21 +264,142 @@
             this.prefixado_texto.TabIndex = 24;
             this.prefixado_texto.Text = "xx.x";
             // 
-            // tick
+            // prefix
             // 
-            this.tick.Tick += new System.EventHandler(this.tick_Tick);
+            this.prefix.Enabled = true;
+            this.prefix.Interval = 1000;
+            this.prefix.Tick += new System.EventHandler(this.prefix_Tick);
+            // 
+            // variable
+            // 
+            this.variable.Enabled = true;
+            this.variable.Interval = 20000;
+            this.variable.Tick += new System.EventHandler(this.variable_Tick);
+            // 
+            // mudamudamuda
+            // 
+            this.mudamudamuda.Enabled = true;
+            this.mudamudamuda.Tick += new System.EventHandler(this.mudamudamuda_Tick);
+            // 
+            // resgata
+            // 
+            this.resgata.AutoSize = true;
+            this.resgata.Enabled = false;
+            this.resgata.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.resgata.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resgata.Location = new System.Drawing.Point(602, 519);
+            this.resgata.Margin = new System.Windows.Forms.Padding(4);
+            this.resgata.Name = "resgata";
+            this.resgata.Size = new System.Drawing.Size(149, 50);
+            this.resgata.TabIndex = 27;
+            this.resgata.Text = "Resgatar";
+            this.resgata.UseVisualStyleBackColor = true;
+            this.resgata.Click += new System.EventHandler(this.resgata_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 526);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(350, 39);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Valor a ser resgatado:";
+            // 
+            // numResgate
+            // 
+            this.numResgate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
+            this.numResgate.DecimalPlaces = 2;
+            this.numResgate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numResgate.ForeColor = System.Drawing.Color.White;
+            this.numResgate.Location = new System.Drawing.Point(384, 524);
+            this.numResgate.Margin = new System.Windows.Forms.Padding(4);
+            this.numResgate.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numResgate.Name = "numResgate";
+            this.numResgate.Size = new System.Drawing.Size(211, 45);
+            this.numResgate.TabIndex = 25;
+            // 
+            // saldo_text
+            // 
+            this.saldo_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saldo_text.ForeColor = System.Drawing.Color.White;
+            this.saldo_text.Location = new System.Drawing.Point(376, 472);
+            this.saldo_text.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.saldo_text.Name = "saldo_text";
+            this.saldo_text.Size = new System.Drawing.Size(678, 39);
+            this.saldo_text.TabIndex = 29;
+            this.saldo_text.Text = "xx.x";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(156, 472);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(197, 39);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Saldo atual:";
+            // 
+            // addinvest
+            // 
+            this.addinvest.Enabled = true;
+            this.addinvest.Interval = 5000;
+            this.addinvest.Tick += new System.EventHandler(this.addinvest_Tick);
+            // 
+            // invest_tudo
+            // 
+            this.invest_tudo.AutoSize = true;
+            this.invest_tudo.Enabled = false;
+            this.invest_tudo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.invest_tudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invest_tudo.Location = new System.Drawing.Point(785, 579);
+            this.invest_tudo.Margin = new System.Windows.Forms.Padding(4);
+            this.invest_tudo.Name = "invest_tudo";
+            this.invest_tudo.Size = new System.Drawing.Size(216, 50);
+            this.invest_tudo.TabIndex = 30;
+            this.invest_tudo.Text = "Investir tudo";
+            this.invest_tudo.UseVisualStyleBackColor = true;
+            this.invest_tudo.Click += new System.EventHandler(this.invest_tudo_Click);
+            // 
+            // resgatarTudo
+            // 
+            this.resgatarTudo.AutoSize = true;
+            this.resgatarTudo.Enabled = false;
+            this.resgatarTudo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.resgatarTudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resgatarTudo.Location = new System.Drawing.Point(785, 519);
+            this.resgatarTudo.Margin = new System.Windows.Forms.Padding(4);
+            this.resgatarTudo.Name = "resgatarTudo";
+            this.resgatarTudo.Size = new System.Drawing.Size(216, 52);
+            this.resgatarTudo.TabIndex = 31;
+            this.resgatarTudo.Text = "Resgatar tudo";
+            this.resgatarTudo.UseVisualStyleBackColor = true;
+            this.resgatarTudo.Click += new System.EventHandler(this.resgatarTudo_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1067, 648);
+            this.Controls.Add(this.resgatarTudo);
+            this.Controls.Add(this.invest_tudo);
+            this.Controls.Add(this.saldo_text);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.resgata);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.numResgate);
             this.Controls.Add(this.prefixado_texto);
             this.Controls.Add(this.fixa_texto);
             this.Controls.Add(this.variavel_texto);
-            this.Controls.Add(this.rendimento);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.total);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -315,6 +420,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numValor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numResgate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,11 +441,19 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label total;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label rendimento;
         private System.Windows.Forms.Label variavel_texto;
         private System.Windows.Forms.Label fixa_texto;
         private System.Windows.Forms.Label prefixado_texto;
-        private System.Windows.Forms.Timer tick;
+        private System.Windows.Forms.Timer prefix;
+        private System.Windows.Forms.Timer variable;
+        private System.Windows.Forms.Timer mudamudamuda;
+        private System.Windows.Forms.Button resgata;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown numResgate;
+        private System.Windows.Forms.Label saldo_text;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Timer addinvest;
+        private System.Windows.Forms.Button invest_tudo;
+        private System.Windows.Forms.Button resgatarTudo;
     }
 }

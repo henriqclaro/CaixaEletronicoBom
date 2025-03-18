@@ -13,14 +13,19 @@ namespace CaixaElel
     public partial class Form1 : Form
     {
         public double saldo = 0;
+        public double investido;
+        public float fixa;
         public Form1()
         {
             InitializeComponent();
         }
 
-        public void ReeberSaldo(double saldo)
+        public void ReceberStuff(double saldo, float fixa, double invest)
         {
+            this.fixa = fixa;
             this.saldo = saldo;
+            this.investido = invest;
+            AtualizarSaldo();
         }
 
         void AtualizarSaldo()
@@ -32,6 +37,7 @@ namespace CaixaElel
         void VerificarLimite()
         {
             btnSacar.Enabled = !((saldo - (double)numValor.Value) < ((double)numLimite.Value * -1));
+            invest.Enabled = !((saldo - (double)numValor.Value) < ((double)numLimite.Value * -1) && investido<=0);
         }
 
         private void btnDepositar_Click(object sender, EventArgs e)
