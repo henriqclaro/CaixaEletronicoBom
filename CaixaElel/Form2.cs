@@ -38,7 +38,6 @@ namespace CaixaElel
             }
             else
             {
-
                 invest.Enabled = true;
                 resgata.Enabled = true;
                 resgatarTudo.Enabled = true;

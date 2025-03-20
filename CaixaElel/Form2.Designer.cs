@@ -67,15 +67,14 @@
             this.numValor.DecimalPlaces = 2;
             this.numValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numValor.ForeColor = System.Drawing.Color.White;
-            this.numValor.Location = new System.Drawing.Point(383, 584);
-            this.numValor.Margin = new System.Windows.Forms.Padding(4);
+            this.numValor.Location = new System.Drawing.Point(287, 474);
             this.numValor.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.numValor.Name = "numValor";
-            this.numValor.Size = new System.Drawing.Size(211, 45);
+            this.numValor.Size = new System.Drawing.Size(158, 38);
             this.numValor.TabIndex = 5;
             // 
             // label1
@@ -83,10 +82,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(19, 584);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 474);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 39);
+            this.label1.Size = new System.Drawing.Size(267, 31);
             this.label1.TabIndex = 6;
             this.label1.Text = "Valor a ser investido:";
             // 
@@ -96,10 +94,9 @@
             this.invest.Enabled = false;
             this.invest.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.invest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invest.Location = new System.Drawing.Point(602, 579);
-            this.invest.Margin = new System.Windows.Forms.Padding(4);
+            this.invest.Location = new System.Drawing.Point(452, 470);
             this.invest.Name = "invest";
-            this.invest.Size = new System.Drawing.Size(149, 50);
+            this.invest.Size = new System.Drawing.Size(124, 41);
             this.invest.TabIndex = 9;
             this.invest.Text = "Investir";
             this.invest.UseVisualStyleBackColor = true;
@@ -110,10 +107,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(27, 352);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(20, 286);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 39);
+            this.label2.Size = new System.Drawing.Size(21, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = " ";
             // 
@@ -122,10 +118,9 @@
             this.escolha.AutoSize = true;
             this.escolha.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.escolha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.escolha.Location = new System.Drawing.Point(34, 229);
-            this.escolha.Margin = new System.Windows.Forms.Padding(4);
+            this.escolha.Location = new System.Drawing.Point(26, 186);
             this.escolha.Name = "escolha";
-            this.escolha.Size = new System.Drawing.Size(146, 50);
+            this.escolha.Size = new System.Drawing.Size(122, 41);
             this.escolha.TabIndex = 11;
             this.escolha.Text = "Escolher";
             this.escolha.UseVisualStyleBackColor = true;
@@ -136,10 +131,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(27, 9);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(20, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(404, 39);
+            this.label3.Size = new System.Drawing.Size(323, 31);
             this.label3.TabIndex = 12;
             this.label3.Text = "Escolha um investimento:";
             // 
@@ -147,14 +141,15 @@
             // 
             this.investimentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.investimentos.FormattingEnabled = true;
-            this.investimentos.ItemHeight = 31;
+            this.investimentos.ItemHeight = 26;
             this.investimentos.Items.AddRange(new object[] {
             "Tesouro prefixado (até 1min)",
             "Renda fixa (CDI 100%)",
             "Renda variável (0.01% - 30%)"});
-            this.investimentos.Location = new System.Drawing.Point(34, 63);
+            this.investimentos.Location = new System.Drawing.Point(26, 51);
+            this.investimentos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.investimentos.Name = "investimentos";
-            this.investimentos.Size = new System.Drawing.Size(398, 159);
+            this.investimentos.Size = new System.Drawing.Size(300, 108);
             this.investimentos.TabIndex = 13;
             // 
             // label4
@@ -162,10 +157,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(559, 9);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(419, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(399, 39);
+            this.label4.Size = new System.Drawing.Size(319, 31);
             this.label4.TabIndex = 14;
             this.label4.Text = "Taxas atuais (% cada 5s)";
             // 
@@ -174,10 +168,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(439, 90);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(329, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(300, 39);
+            this.label5.Size = new System.Drawing.Size(240, 31);
             this.label5.TabIndex = 15;
             this.label5.Text = "Tesouro prefixado:";
             // 
@@ -186,10 +179,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(550, 129);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(412, 105);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(189, 39);
+            this.label6.Size = new System.Drawing.Size(151, 31);
             this.label6.TabIndex = 16;
             this.label6.Text = "Renda fixa:";
             // 
@@ -198,10 +190,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(485, 168);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(364, 136);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(254, 39);
+            this.label7.Size = new System.Drawing.Size(203, 31);
             this.label7.TabIndex = 17;
             this.label7.Text = "Renda variável:";
             // 
@@ -210,10 +201,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(20, 420);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(15, 341);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(333, 39);
+            this.label8.Size = new System.Drawing.Size(266, 31);
             this.label8.TabIndex = 18;
             this.label8.Text = "Valor atual investido:";
             // 
@@ -221,10 +211,9 @@
             // 
             this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.total.ForeColor = System.Drawing.Color.White;
-            this.total.Location = new System.Drawing.Point(376, 420);
-            this.total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.total.Location = new System.Drawing.Point(282, 341);
             this.total.Name = "total";
-            this.total.Size = new System.Drawing.Size(678, 39);
+            this.total.Size = new System.Drawing.Size(508, 32);
             this.total.TabIndex = 19;
             this.total.Text = "xx.x";
             // 
@@ -233,10 +222,9 @@
             this.variavel_texto.AutoSize = true;
             this.variavel_texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.variavel_texto.ForeColor = System.Drawing.Color.White;
-            this.variavel_texto.Location = new System.Drawing.Point(747, 168);
-            this.variavel_texto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.variavel_texto.Location = new System.Drawing.Point(560, 136);
             this.variavel_texto.Name = "variavel_texto";
-            this.variavel_texto.Size = new System.Drawing.Size(77, 39);
+            this.variavel_texto.Size = new System.Drawing.Size(61, 31);
             this.variavel_texto.TabIndex = 22;
             this.variavel_texto.Text = "xx.x";
             // 
@@ -245,10 +233,9 @@
             this.fixa_texto.AutoSize = true;
             this.fixa_texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fixa_texto.ForeColor = System.Drawing.Color.White;
-            this.fixa_texto.Location = new System.Drawing.Point(747, 129);
-            this.fixa_texto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.fixa_texto.Location = new System.Drawing.Point(560, 105);
             this.fixa_texto.Name = "fixa_texto";
-            this.fixa_texto.Size = new System.Drawing.Size(77, 39);
+            this.fixa_texto.Size = new System.Drawing.Size(61, 31);
             this.fixa_texto.TabIndex = 23;
             this.fixa_texto.Text = "xx.x";
             // 
@@ -257,10 +244,9 @@
             this.prefixado_texto.AutoSize = true;
             this.prefixado_texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prefixado_texto.ForeColor = System.Drawing.Color.White;
-            this.prefixado_texto.Location = new System.Drawing.Point(747, 90);
-            this.prefixado_texto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.prefixado_texto.Location = new System.Drawing.Point(560, 73);
             this.prefixado_texto.Name = "prefixado_texto";
-            this.prefixado_texto.Size = new System.Drawing.Size(77, 39);
+            this.prefixado_texto.Size = new System.Drawing.Size(61, 31);
             this.prefixado_texto.TabIndex = 24;
             this.prefixado_texto.Text = "xx.x";
             // 
@@ -287,10 +273,9 @@
             this.resgata.Enabled = false;
             this.resgata.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.resgata.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resgata.Location = new System.Drawing.Point(602, 519);
-            this.resgata.Margin = new System.Windows.Forms.Padding(4);
+            this.resgata.Location = new System.Drawing.Point(452, 422);
             this.resgata.Name = "resgata";
-            this.resgata.Size = new System.Drawing.Size(149, 50);
+            this.resgata.Size = new System.Drawing.Size(124, 41);
             this.resgata.TabIndex = 27;
             this.resgata.Text = "Resgatar";
             this.resgata.UseVisualStyleBackColor = true;
@@ -301,10 +286,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(3, 526);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(2, 427);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(350, 39);
+            this.label9.Size = new System.Drawing.Size(280, 31);
             this.label9.TabIndex = 26;
             this.label9.Text = "Valor a ser resgatado:";
             // 
@@ -314,25 +298,23 @@
             this.numResgate.DecimalPlaces = 2;
             this.numResgate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numResgate.ForeColor = System.Drawing.Color.White;
-            this.numResgate.Location = new System.Drawing.Point(384, 524);
-            this.numResgate.Margin = new System.Windows.Forms.Padding(4);
+            this.numResgate.Location = new System.Drawing.Point(288, 426);
             this.numResgate.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.numResgate.Name = "numResgate";
-            this.numResgate.Size = new System.Drawing.Size(211, 45);
+            this.numResgate.Size = new System.Drawing.Size(158, 38);
             this.numResgate.TabIndex = 25;
             // 
             // saldo_text
             // 
             this.saldo_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saldo_text.ForeColor = System.Drawing.Color.White;
-            this.saldo_text.Location = new System.Drawing.Point(376, 472);
-            this.saldo_text.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.saldo_text.Location = new System.Drawing.Point(282, 384);
             this.saldo_text.Name = "saldo_text";
-            this.saldo_text.Size = new System.Drawing.Size(678, 39);
+            this.saldo_text.Size = new System.Drawing.Size(508, 32);
             this.saldo_text.TabIndex = 29;
             this.saldo_text.Text = "xx.x";
             // 
@@ -341,10 +323,9 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(156, 472);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(117, 384);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(197, 39);
+            this.label11.Size = new System.Drawing.Size(157, 31);
             this.label11.TabIndex = 28;
             this.label11.Text = "Saldo atual:";
             // 
@@ -360,10 +341,9 @@
             this.invest_tudo.Enabled = false;
             this.invest_tudo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.invest_tudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invest_tudo.Location = new System.Drawing.Point(785, 579);
-            this.invest_tudo.Margin = new System.Windows.Forms.Padding(4);
+            this.invest_tudo.Location = new System.Drawing.Point(589, 470);
             this.invest_tudo.Name = "invest_tudo";
-            this.invest_tudo.Size = new System.Drawing.Size(216, 50);
+            this.invest_tudo.Size = new System.Drawing.Size(177, 41);
             this.invest_tudo.TabIndex = 30;
             this.invest_tudo.Text = "Investir tudo";
             this.invest_tudo.UseVisualStyleBackColor = true;
@@ -375,10 +355,9 @@
             this.resgatarTudo.Enabled = false;
             this.resgatarTudo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.resgatarTudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resgatarTudo.Location = new System.Drawing.Point(785, 519);
-            this.resgatarTudo.Margin = new System.Windows.Forms.Padding(4);
+            this.resgatarTudo.Location = new System.Drawing.Point(589, 422);
             this.resgatarTudo.Name = "resgatarTudo";
-            this.resgatarTudo.Size = new System.Drawing.Size(216, 52);
+            this.resgatarTudo.Size = new System.Drawing.Size(177, 42);
             this.resgatarTudo.TabIndex = 31;
             this.resgatarTudo.Text = "Resgatar tudo";
             this.resgatarTudo.UseVisualStyleBackColor = true;
@@ -386,10 +365,10 @@
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1067, 648);
+            this.ClientSize = new System.Drawing.Size(800, 526);
             this.Controls.Add(this.resgatarTudo);
             this.Controls.Add(this.invest_tudo);
             this.Controls.Add(this.saldo_text);
@@ -414,7 +393,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numValor);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "Investimento";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
