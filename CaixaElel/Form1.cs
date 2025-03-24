@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,49 +14,32 @@ namespace CaixaElel
 {
     public partial class Form1 : Form
     {
-        public double saldo = 0;
-        public double investido = 0;
-        public float fixa = 0;
+        int color = 50;
         public Form1()
         {
             InitializeComponent();
         }
 
-        public void ReceberStuff(double saldo, float fixa, double invest)
-        {
-            this.saldo = saldo;
-            if(!(fixa == -1))
-            {
-                this.fixa = fixa;
-            }
-            if(!(invest == -1))
-            {
-                this.investido = invest;
-            }
-            AtualizarSaldo();
-        }
-
         void AtualizarSaldo()
         {
-            lblSaldo.Text = saldo.ToString("c");
+            lblSaldo.Text = Program.saldo.ToString("c");
             VerificarLimite();
         }
 
-        void VerificarLimite()
+        public void VerificarLimite()
         {
-            btnSacar.Enabled = !((saldo - (double)numValor.Value) < ((double)numLimite.Value * -1));
-            invest.Enabled = !((saldo - (double)numValor.Value) < ((double)numLimite.Value * -1) && investido<=0);
-            aposta.Enabled = !((saldo - (double)numValor.Value) < ((double)numLimite.Value * -1) && investido <= 0);
+            btnSacar.Enabled = !((Program.saldo - (double)numValor.Value) < ((double)numLimite.Value * -1));
         }
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
-            saldo += (double) numValor.Value;
+            Program.saldo += (double)numValor.Value;
             AtualizarSaldo();
         }
+
         private void btnSacar_Click(object sender, EventArgs e)
         {
-            saldo -= (double) numValor.Value;
+            Program.saldo -= (double)numValor.Value;
             AtualizarSaldo();
         }
 
@@ -66,40 +50,59 @@ namespace CaixaElel
 
         private void invest_Click(object sender, EventArgs e)
         {
-            Form2 inves = new Form2(this);
+            Form2 inves = new Form2();
             inves.Show();
             this.Hide();
         }
 
         private void aposta_Click(object sender, EventArgs e)
         {
-            mouse = false;
             Form3 apost = new Form3(this);
             apost.Show();
             this.Hide();
         }
 
         Random rnd = new Random();
-        bool mouse = false;
+        bool aumenta;
         private async void aposta_Enter(object sender, EventArgs e)
         {
-            mouse = true;
-            while(mouse){
-                BackColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                await Task.Delay(100);
-            }
-            BackColor = Color.FromArgb(50, 51, 53);
-            
-
+            aumenta = false;
+            await mudarCor(-3);
         }
-        private void aposta_Leave(object sender, EventArgs e)
+
+        private async Task mudarCor(int quanto)
         {
-            mouse = false;
+            while ((aumenta == true && quanto > 0) || (aumenta == false && quanto < 0))
+            {
+                color += quanto;
+                if (color >= 50)
+                    break;
+                if (color <= 0)
+                    break;
+                BackColor = Color.FromArgb(color, color, color);
+                await Task.Delay(1); // btw, ta ai só pra funcionar, se n tiver o codigo roda tão rapido q n acontece nada (eu acho)
+            }
+        }
+
+        private async void aposta_Leave(object sender, EventArgs e)
+        {
+            aumenta = true;
+            await mudarCor(3);
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void background_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblSaldo.Text = Program.saldo.ToString("c");
         }
     }
 }

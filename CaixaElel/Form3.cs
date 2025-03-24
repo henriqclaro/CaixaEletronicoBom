@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,83 +13,134 @@ namespace CaixaElel
 {
     public partial class Form3 : Form
     {
-        double saldo;
-
         Form1 form1 = new Form1();
-        int[] roleta;
-        int[] spins;
-        Label[] tela;
+        int forms = 0;
+        public static bool noForms = false;
         Random r = new Random();
+        List<ApostaResult> apostas = new List<ApostaResult>();
         public Form3(Form1 ant)
         {
             InitializeComponent();
-            this.saldo = ant.saldo;
-            roleta = new int[3];
-            spins = new int[3];
-            tela = new Label[] { num1, num2, num3};
-            for (int i = 0; i < roleta.Length; i++)
-            {
-                roleta[i] = r.Next(0, 10);
-                atualizar(i);
-            }
+            atualizarCoisas();
         }
-        void atualizar(int i)
-        {
-            tela[i].Text = roleta[i].ToString();
-        }
-
         private void girar_Click(object sender, EventArgs e)
         {
+            if(roletas.Value == 0)
             {
-                for (int i = 0; i < spins.Length; i++)
-                {
-                    spins[i] = r.Next(1, 21);
-                    atualizar(i);
-                    tela[i].ForeColor = Color.Black;
-
-                }
-                Array.Sort(spins);
-                girar.Enabled = true;
-                timer1.Enabled = true;
+                killAllButton.Enabled = false;
+                MessageBox.Show("Selecione um valor maior que 0.");
             }
+            else
+            {
+                apostas.Clear();
+                forms = 0;
+
+                int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+                int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+                int formWidth = 300;
+                int formHeight = 200;
+                int totalWidth = (int)roletas.Value * formWidth;
+                int startX = (screenWidth - totalWidth) / 2;
+                int startY = (screenHeight - formHeight) / 2;
+
+                for (int i = 0; i < roletas.Value; i++)
+                {
+                    ApostaResult aposta = new ApostaResult(r.Next(0, 10), r.Next(0, 10), r.Next(0, 10), this);
+                    aposta.StartPosition = FormStartPosition.Manual;
+                    aposta.Location = new Point(startX + (i * formWidth), startY);
+
+                    apostas.Add(aposta);
+                    aposta.Show();
+                    aposta.iniciarTimer();
+                }
+                girar.Enabled = false;
+                killAllButton.Enabled = true;
+            }
+               
+            
         }
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
-            form1.ReceberStuff(saldo, -1, -1);
+            killAll();
             form1.Show();
         }
-        bool parado = false;
-        private void timer1_Tick(object sender, EventArgs e)
+        private void atualizarCoisas()
         {
+            apostadoLbl.Text = Program.apostado.ToString("c");
+            atual.Text = Program.saldo.ToString("c");
+        }
+        private void aposta_Click(object sender, EventArgs e)
+        {
+            if ((double)numValor.Value > Program.saldo)
             {
-                for (int i = 0; i < spins.Length; i++)
-                {
-                    if (spins[i] > 0)
-                    {
-                        spins[i]--;
-                        if (spins[i] == 0)
-                        {
-                            parado = true;
-                            tela[i].ForeColor = Color.Red;
-                        }
-                        else
-                        {
-                            parado = false;
-                        }
-                        roleta[i]++;
-                        if (roleta[i] > 9)
-                        {
-                            roleta[i] = 0;
-                        }
-                        atualizar(i);
-                    }
-                    if(parado && roleta[i] == 1)
-                    {
-                        tela[i].ForeColor = Color.Green;
-                    }
-                }
+                MessageBox.Show("Saldo insuficiente.");
             }
+            else
+            {
+                Program.apostado += (double)numValor.Value;
+                Program.saldo -= (double)numValor.Value;
+                
+                atualizarCoisas();
+            }
+        }
+
+        private void resgata_Click(object sender, EventArgs e)
+        {
+            if ((double)numResgate.Value > Program.apostado)
+            {
+                MessageBox.Show("Valor de resgate maior que o investido.");
+            }
+            else
+            {
+                Program.saldo += ((double)numResgate.Value*0.8);
+                Program.apostado -= (float)numResgate.Value;
+                atualizarCoisas();
+            }
+        }
+        private void multiplicador_Tick(object sender, EventArgs e)
+        {
+            multiplier_text.Text = Program.multiplicador.ToString();
+            acertos_label.Text = Program.acertos_aposta.ToString();
+            if (apostas.Count == 0)
+            {
+                noForms = true;
+                girar.Enabled = true;
+            }
+            else
+            {
+                noForms = false;
+            }
+        }
+        public void killAll()
+        {
+            for (int i = 0; i < apostas.Count; i++)
+            {
+                apostas[i].Close();
+            }
+            apostas.Clear();
+            Program.apostado *= Program.multiplicador; 
+            apostadoLbl.Text = Program.apostado.ToString("c");
+        }
+        private void killAll_Click(object sender, EventArgs e)
+        {
+            killAll();
+            Program.multiplicador = 0;
+            Program.acertos_aposta = 0;
+        }
+
+        private void aposTudo_Click(object sender, EventArgs e)
+        {
+            Program.apostado += (float)Program.saldo;
+            Program.saldo = 0;
+            atualizarCoisas();
+        }
+
+        private void resgTudo_Click(object sender, EventArgs e)
+        {
+            Program.saldo += Program.apostado * 0.8;
+            Program.apostado = 0;
+            atualizarCoisas();
         }
     }
 }

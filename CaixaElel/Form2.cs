@@ -14,25 +14,18 @@ namespace CaixaElel
     public partial class Form2 : Form
     {
         private float prefixado;
-        private float fixa;
         private int atual;
-        private double investido;
         private float variavel;
         Random random = new Random();
-        Form1 form1;
-        double saldo;
-        public Form2(Form1 anterior)
+        Form1 form1 = new Form1();
+        public Form2()
         {
             InitializeComponent();
-            this.form1 = anterior;
-            this.saldo = anterior.saldo;
-            this.fixa = anterior.fixa;
-            this.investido = anterior.investido;
         }
         private void Form2_Load(object sender, EventArgs e)
         {
             startInvestimentos();
-            if (saldo < 0 && investimentos.SelectedItems.Count == 0)
+            if (Program.saldo < 0 && investimentos.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Seleciona um investimento.");
             }
@@ -47,30 +40,31 @@ namespace CaixaElel
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            form1.ReceberStuff(saldo, fixa, investido);
             form1.Show();
+            form1.VerificarLimite();
         }
         private void startInvestimentos()
         {
-            prefixado = (float)(random.NextDouble()*(20f- 9f) + 9f);
-            if(!(fixa != 0)) {
-                fixa = (float)(random.NextDouble() * (19f - 13f) + 13f);
+            prefixado = (float)(random.NextDouble() * (20f - 9f) + 9f);
+            if (!(Program.fixa != 0))
+            {
+                Program.fixa = (float)(random.NextDouble() * (19f - 13f) + 13f);
             }
             variavel = (float)(random.NextDouble() * (30f - 0.01f) + 0.01f);
             prefixado_texto.Text = prefixado.ToString();
-            fixa_texto.Text = fixa.ToString();
+            fixa_texto.Text = Program.fixa.ToString();
             variavel_texto.Text = variavel.ToString();
         }
         private void invest_Click(object sender, EventArgs e)
         {
-            if ((double)numValor.Value > saldo)
+            if ((double)numValor.Value > Program.saldo)
             {
                 MessageBox.Show("Saldo insuficiente.");
             }
             else
             {
-                investido = (double)numValor.Value;
-                saldo -= (double)numValor.Value;
+                Program.investido = (double)numValor.Value;
+                Program.saldo -= (double)numValor.Value;
             }
         }
 
@@ -95,20 +89,20 @@ namespace CaixaElel
 
         private void mudamudamuda_Tick(object sender, EventArgs e)
         {
-            total.Text = "R$" + ((float)investido);
-            saldo_text.Text = "R$" + ((float)saldo);
+            total.Text = ((float)Program.investido).ToString("c");
+            saldo_text.Text = ((float)Program.saldo).ToString("c");
         }
 
         private void resgata_Click(object sender, EventArgs e)
         {
-            if((double)numResgate.Value > investido)
+            if ((double)numResgate.Value > Program.investido)
             {
                 MessageBox.Show("Valor de resgate maior que o investido.");
             }
             else
             {
-                saldo += (double)numResgate.Value;
-                investido -= (double)numResgate.Value;
+                Program.saldo += (double)numResgate.Value;
+                Program.investido -= (double)numResgate.Value;
             }
         }
 
@@ -116,28 +110,28 @@ namespace CaixaElel
         {
             if (atual == 0)
             {
-                investido *= (prefixado / 100 + 1);
+                Program.investido *= (prefixado / 100 + 1);
             }
             else if (atual == 1)
             {
-                investido *= (fixa / 100 + 1);
+                Program.investido *= (Program.fixa / 100 + 1);
             }
             else if (atual == 2)
             {
-                investido *= (variavel / 100 + 1);
+                Program.investido *= (variavel / 100 + 1);
             }
         }
 
         private void invest_tudo_Click(object sender, EventArgs e)
         {
-            investido += saldo;
-            saldo = 0;
+            Program.investido += Program.saldo;
+            Program.saldo = 0;
         }
 
         private void resgatarTudo_Click(object sender, EventArgs e)
         {
-            saldo += investido;
-            investido = 0;
+            Program.saldo += Program.investido;
+            Program.investido = 0;
         }
     }
 }
