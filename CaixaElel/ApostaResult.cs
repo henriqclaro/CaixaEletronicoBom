@@ -81,7 +81,8 @@ namespace CaixaElel
                         roleta[i] = 0;
                     }
                     atualizar(i);
-                    
+
+
                     if(parado && (i>0 && roleta[i] == roleta[i - 1]) && roleta[i] != 7)
                     {
                         acertosLocal+=2;
@@ -89,13 +90,14 @@ namespace CaixaElel
                         tela[i].ForeColor = Color.Green;
                         tela[i - 1].ForeColor = Color.Green;
                         bonus = false;
-                    } else if(parado )
+                    } else if(parado)
                     {
                         tela[i].ForeColor = Color.Red;
                     }
                     if (parado && (roleta[i] == 7))
                     {
                         tela[i].ForeColor = Color.Purple;
+
                         acertosLocal++;
                         bonus = true;
                         Program.acertos_aposta++;
@@ -109,11 +111,15 @@ namespace CaixaElel
                         }
                         else if (acertosLocal == 3)
                         {
+                            Program.numCertos += $"{roleta[i - 2]}-{roleta[i - 1]}-{roleta[i]}\n";
                             if (bonus)
                                 Program.multiplicador += 3f;
                             else
                                 Program.multiplicador *= 1.5f;
-
+                        }
+                        if (parado)
+                        {
+                            Program.sorteados += $"{roleta[i - 2]}-{roleta[i - 1]}-{roleta[i]}\n";
                         }
                     }
                 }

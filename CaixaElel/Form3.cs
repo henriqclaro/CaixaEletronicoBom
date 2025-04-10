@@ -14,7 +14,7 @@ namespace CaixaElel
     public partial class Form3 : Form
     {
         Form1 form1 = new Form1();
-        int forms = 0;
+
         public static bool noForms = false;
         Random r = new Random();
         List<ApostaResult> apostas = new List<ApostaResult>();
@@ -33,8 +33,6 @@ namespace CaixaElel
             else
             {
                 apostas.Clear();
-                forms = 0;
-
                 int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
                 int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
                 int formWidth = 300;
@@ -42,13 +40,11 @@ namespace CaixaElel
                 int totalWidth = (int)roletas.Value * formWidth;
                 int startX = (screenWidth - totalWidth) / 2;
                 int startY = (screenHeight - formHeight) / 2;
-
                 for (int i = 0; i < roletas.Value; i++)
                 {
                     ApostaResult aposta = new ApostaResult(r.Next(0, 10), r.Next(0, 10), r.Next(0, 10), this);
                     aposta.StartPosition = FormStartPosition.Manual;
                     aposta.Location = new Point(startX + (i * formWidth), startY);
-
                     apostas.Add(aposta);
                     aposta.Show();
                     aposta.iniciarTimer();
@@ -100,6 +96,14 @@ namespace CaixaElel
         }
         private void multiplicador_Tick(object sender, EventArgs e)
         {
+            if (chbVitorias.Checked)
+            {
+                sortRich.Text = Program.numCertos;
+            }
+            else
+            {
+                sortRich.Text = Program.sorteados;
+            }
             multiplier_text.Text = Program.multiplicador.ToString();
             acertos_label.Text = Program.acertos_aposta.ToString();
             if (apostas.Count == 0)
@@ -124,6 +128,7 @@ namespace CaixaElel
         }
         private void killAll_Click(object sender, EventArgs e)
         {
+            sortRich.Text = Program.sorteados;
             killAll();
             Program.multiplicador = 0;
             Program.acertos_aposta = 0;
@@ -141,6 +146,10 @@ namespace CaixaElel
             Program.saldo += Program.apostado * 0.8;
             Program.apostado = 0;
             atualizarCoisas();
+        }
+
+        private void chbVitorias_CheckedChanged(object sender, EventArgs e)
+        { 
         }
     }
 }

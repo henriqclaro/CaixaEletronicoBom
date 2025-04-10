@@ -14,6 +14,8 @@ namespace CaixaElel
         public static double apostado = 0;
         public static float multiplicador = 0;
         public static byte acertos_aposta = 0;
+        public static String numCertos; 
+        public static String sorteados;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
