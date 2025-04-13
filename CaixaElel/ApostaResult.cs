@@ -109,7 +109,7 @@ namespace CaixaElel
                         {
                             Program.multiplicador = Program.acertos_aposta * 0.1f;
                         }
-                        else if (acertosLocal == 3)
+                        else if (acertosLocal >= 3)
                         {
                             Program.numCertos += $"{roleta[i - 2]}-{roleta[i - 1]}-{roleta[i]}\n";
                             if (bonus)
